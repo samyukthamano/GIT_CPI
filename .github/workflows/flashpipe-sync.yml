@@ -3,7 +3,7 @@ name: Sync CPI Artifacts to GitHub
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 14 * * *"  # optional daily run
+    - cron: "30 14 * * *"
 
 jobs:
   sync:
@@ -24,10 +24,8 @@ jobs:
           oauth-clientid: ${{ secrets.DEV_CLIENT_ID }}
           oauth-clientsecret: ${{ secrets.DEV_CLIENT_SECRET }}
 
-          package-id: ${{ secrets.PACKAGE_ID }}
-
+          package-id: Demo_Package
           dir-artifacts-relative: cpi-artifacts
 
           git-commit-msg: "Automated sync from CPI tenant"
-
           sync-package-details: true
